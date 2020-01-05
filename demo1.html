@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+ 		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Weapons 3D menu demo of tombraider.js">
+    <meta name="author" content="namelivia">
+
+    <title>tombraider.js - Weapons menu demo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Prism -->
+    <link href="css/prism.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+            <div class="container" style="padding:24px;">
+                <div class="col-lg-8 col-lg-offset-2">
+		    <a href="../#demo"><i class="fa fa-arrow-left"></i>Back</a>
+                    <h2>Weapons 3D menu</h2>
+		    <p style="font-size:1em;">An example of a 3D menu similar to the original Tomb Raider 2 menu, it contains some weapons and a similar background. The menu control is binded to two html buttons and also the name of the selected element is displayed in a html tag under the menu.<a href="http://opengameart.org/content/fps-weapons"> 3D models by Kingofthecrows on Opengameart</a></p>
+		    <div role="tabpanel">
+					<ul class="nav nav-tabs" role="tablist">
+          	<li role="presentation" class="active"><a href="#result" aria-controls ="result" role="tab" data-toggle="tab">Result</a></li>
+            <li role="presentation"><a href="#html" aria-controls ="html" role="tab" data-toggle="tab">HTML</a></li>
+            <li role="presentation"><a href="#javascript" aria-controls ="javascript" role="tab" data-toggle="tab">Javascript</a></li>
+          </ul>
+		    <div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="result">
+						<div id="demo1" style="width:700px;height:400px;background:url('./img/somebg.png');"></div>
+						<div class="row text-center" style="margin-top:-360px;">
+							<button type="button" class="btn btn-default btn-lg" id="moveLeft">
+									<i class="fa fa-arrow-left"></i>
+							</button>
+							<p id="itemName" style="display:inline-block;margin-left:14px;margin-right:14px;min-width:263px;">Click on the arrows to move</p>
+							<button type="button" class="btn btn-default btn-lg" id="moveRight">
+									<i class="fa fa-arrow-right"></i>
+							</button>
+						</div>
+        	</div>
+					<div role="tabpanel" class="tab-pane" id="html">
+					  <pre>
+						<code class="language-markup">
+ 							<script>
+<div id="demo1"></div>
+<div class="row" style="margin-top:14px;">
+	<button type="button" class="btn btn-default btn-lg" id="moveLeft">
+			<i class="fa fa-arrow-left"></i>
+	</button>
+	<p id="itemName" class="hint">Click on the arrows to move</p>
+	<button type="button" class="btn btn-default btn-lg" id="moveRight">
+			<i class="fa fa-arrow-right"></i>
+	</button>
+</div>
+						  </script>
+            </code>
+					  </pre>
+          </div>
+					<div role="tabpanel" class="tab-pane" id="javascript">
+						<pre>
+						<code class="language-javascript">
+
+var newMenu = new tombraidermenu('demo1');
+newMenu.setRadius(2800);
+newMenu.setCameraHeight(1200);
+newMenu.setCameraDistance(5800);
+newMenu.addModel('Shotgun','../models/shotgun.json',null,null);
+newMenu.addModel('EO Tech','../models/eotech.json',null,null);
+newMenu.addModel('USP','../models/usp.json',null,null);
+newMenu.addModel('SCAR','../models/scar.json',null,null);
+newMenu.addModel('M4 Rifle','../models/m4.json',null,null);
+
+$("#moveLeft").on("click",function(){
+	newMenu.moveLeft();
+	$("#itemName").html(newMenu.getSelectedName());
+});
+
+$("#moveRight").on("click",function(){
+	newMenu.moveRight();
+	$("#itemName").html(newMenu.getSelectedName());
+});
+						</code>
+						</pre>
+		    </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Prism -->
+    <script src="js/prism.js"></script>
+
+    <!-- Threejs -->
+    <script src="js/three.min.js"></script>
+
+    <!-- Detector -->
+    <script src="js/Detector.js"></script>
+
+    <!-- tombraider.js -->
+    <script src="js/tombraider.js-v0.0.1.min.js"></script>
+
+    <!-- demos.js -->
+    <script src="js/demo1.js"></script>
+
+</body>
+
+</html>

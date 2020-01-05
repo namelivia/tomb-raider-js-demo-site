@@ -1,0 +1,136 @@
+<!DOCTYPE html lang="en">
+
+<head>
+
+ 		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Black and white menu for some websites, second demo for tombraider.js">
+    <meta name="author" content="namelivia">
+
+    <title>tombraider.js - Golden svg icons demo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Prism -->
+    <link href="css/prism.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+            <div class="container" style="padding:24px;">
+                <div class="col-lg-8 col-lg-offset-2">
+		    <a href="../#demo"><i class="fa fa-arrow-left"></i>Back</a>
+                    <h2>Golden SVG icons menu</h2>
+		    <p style="font-size:1em;">This example features a 3D menu created out of SVG shapes to 3D icons using Blender. It also demonstrates events risen from an object action, that can be captured and custom javascript functions can be called when activating a menu option.</p>
+		    <div role="tabpanel">
+					<ul class="nav nav-tabs" role="tablist">
+          	<li role="presentation" class="active"><a href="#result" aria-controls ="result2" role="tab" data-toggle="tab">Result</a></li>
+            <li role="presentation"><a href="#html" aria-controls ="html" role="tab" data-toggle="tab">HTML</a></li>
+            <li role="presentation"><a href="#javascript" aria-controls ="javascript" role="tab" data-toggle="tab">Javascript</a></li>
+            <li role="presentation"><a href="#json" aria-controls ="javascript" role="tab" data-toggle="tab">JSON</a></li>
+          </ul>
+		    <div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="result">
+						<div id="demo" style="width:700px;height:400px;background:url('./img/background3.png');"></div>
+						<div class="row text-center" style="margin-top:14px;">
+							<p style="display:inline;margin-left:14px;margin-right:14px;">Use your keyboard arrows to move, enter to trigger the action</p>
+<div id="slider" style="display:none;widt:500px;height:50px;background-color:red;color:white;">It works!</div>
+						</div>
+        	</div>
+					<div role="tabpanel" class="tab-pane" id="html">
+					  <pre>
+						<code class="language-markup">
+ 							<script>
+<div id="demo"></div>
+<div class="row" style="margin-top:14px;">
+	<p style="display:inline;margin-left:14px;margin-right:14px;">Use your keyboard arrows to move, enter to trigger the action</p>
+<div id="slider" style="display:none;widt:500px;height:50px;background-color:red;color:white;">It works!</div>
+</div>
+						  </script>
+            </code>
+					  </pre>
+          </div>
+					<div role="tabpanel" class="tab-pane" id="javascript">
+<pre>
+<code class="language-javascript">
+var newMenu = new tombraidermenu('demo');
+newMenu.setConfig(jsonConfig);
+
+$("body").keydown(function(e) {
+  if(e.keyCode == 37) {
+    newMenu.moveLeft();
+    $("#selected").html(newMenu.getSelectedName());
+  }
+  else if(e.keyCode == 39) {
+    newMenu.moveRight();
+    $("#selected").html(newMenu.getSelectedName());
+  }
+  else if(e.keyCode == 13) {
+    newMenu.action();
+  }
+  document.addEventListener("action", function(e) {
+    $("#slider").slideToggle();
+    console.log("The selected index is: "+e.detail.selected);
+  });
+});
+						</code>
+						</pre>
+		    </div>
+<div role="tabpanel" class="tab-pane" id="json">
+<pre>
+<code class="language-javascript">
+{"objects":[
+	{"name":"Github","action":"","params":"","model":"models/github.json"},
+	{"name":"Map","action":"","params":"","model":"models/map.json"},
+	{"name":"Speaker","action":"","params":"","model":"models/speaker.json"},
+	{"name":"Home","action":"","params":"","model":"models/home.json"},
+	{"name":"Notification","action":"","params":"","model":"models/notification.json"},
+	{"name":"Retweet","action":"","params":"","model":"models/retweet.json"}
+],"distance":11600,"height":2400,"radius":4000}
+</code>
+</pre>
+</div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Prism -->
+    <script src="js/prism.js"></script>
+
+    <!-- Threejs -->
+    <script src="js/three.min.js"></script>
+
+    <!-- Detector -->
+    <script src="js/Detector.js"></script>
+
+    <!-- tombraider.js -->
+    <script src="js/tombraider.js-v0.0.1.min.js"></script>
+
+    <!-- demos.js -->
+    <script src="js/demo3.js"></script>
+
+</body>
+
+</html>
