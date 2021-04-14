@@ -1,21 +1,21 @@
-$(document).ready(function(){
-	var newMenu = new tombraidermenu('demo1');
-	newMenu.setRadius(2800);
-	newMenu.setCameraHeight(1200);
-	newMenu.setCameraDistance(5800);
-	newMenu.addModel('Shotgun','../models/shotgun.json',null,null);
-	newMenu.addModel('EO Tech','../models/eotech.json',null,null);
-	newMenu.addModel('USP','../models/usp.json',null,null);
-	newMenu.addModel('SCAR','../models/scar.json',null,null);
-	newMenu.addModel('M4 Rifle','../models/m4.json',null,null);
+var newMenu = TombRaiderMenu('demo1');
+newMenu.setRadius(2.5);
+newMenu.setCameraHeight(2);
+newMenu.setCameraDistance(5);
+Promise.all([
+    newMenu.addItem('Shotgun','../models/shotgun.gltf',null,null),
+    newMenu.addItem('EO Tech','../models/eotech.gltf',null,null),
+    newMenu.addItem('USP','../models/usp.gltf',null,null),
+    newMenu.addItem('SCAR','../models/scar.gltf',null,null),
+    newMenu.addItem('M4 Rifle','../models/m4.gltf',null,null)
+]).then(function() { newMenu.animate() });
 
-	$("#moveLeft").on("click",function(){
-	  newMenu.moveLeft();
-	  $("#itemName").html(newMenu.getSelectedName());
-	});
+$("#moveLeft").on("click",function(){
+  newMenu.moveLeft();
+  $("#itemName").html(newMenu.getSelectedName());
+});
 
-	$("#moveRight").on("click",function(){
-	  newMenu.moveRight();
-	  $("#itemName").html(newMenu.getSelectedName());
-	});
+$("#moveRight").on("click",function(){
+  newMenu.moveRight();
+  $("#itemName").html(newMenu.getSelectedName());
 });

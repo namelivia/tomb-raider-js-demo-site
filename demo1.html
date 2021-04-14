@@ -81,24 +81,26 @@
 						<pre>
 						<code class="language-javascript">
 
-var newMenu = new tombraidermenu('demo1');
-newMenu.setRadius(2800);
-newMenu.setCameraHeight(1200);
-newMenu.setCameraDistance(5800);
-newMenu.addModel('Shotgun','../models/shotgun.json',null,null);
-newMenu.addModel('EO Tech','../models/eotech.json',null,null);
-newMenu.addModel('USP','../models/usp.json',null,null);
-newMenu.addModel('SCAR','../models/scar.json',null,null);
-newMenu.addModel('M4 Rifle','../models/m4.json',null,null);
+var newMenu = TombRaiderMenu('demo1');
+newMenu.setRadius(2.5);
+newMenu.setCameraHeight(2);
+newMenu.setCameraDistance(5);
+Promise.all([
+    newMenu.addItem('Shotgun','../models/shotgun.gltf',null,null),
+    newMenu.addItem('EO Tech','../models/eotech.gltf',null,null),
+    newMenu.addItem('USP','../models/usp.gltf',null,null),
+    newMenu.addItem('SCAR','../models/scar.gltf',null,null),
+    newMenu.addItem('M4 Rifle','../models/m4.gltf',null,null)
+]).then(function() { newMenu.animate() });
 
 $("#moveLeft").on("click",function(){
-	newMenu.moveLeft();
-	$("#itemName").html(newMenu.getSelectedName());
+  newMenu.moveLeft();
+  $("#itemName").html(newMenu.getSelectedName());
 });
 
 $("#moveRight").on("click",function(){
-	newMenu.moveRight();
-	$("#itemName").html(newMenu.getSelectedName());
+  newMenu.moveRight();
+  $("#itemName").html(newMenu.getSelectedName());
 });
 						</code>
 						</pre>
@@ -118,14 +120,11 @@ $("#moveRight").on("click",function(){
     <!-- Prism -->
     <script src="js/prism.js"></script>
 
-    <!-- Threejs -->
-    <script src="js/three.min.js"></script>
-
     <!-- Detector -->
     <script src="js/Detector.js"></script>
 
     <!-- tombraider.js -->
-    <script src="js/tombraider.js-v0.0.1.min.js"></script>
+    <script src="js/tombraider.js-v0.0.2.min.js"></script>
 
     <!-- demos.js -->
     <script src="js/demo1.js"></script>
