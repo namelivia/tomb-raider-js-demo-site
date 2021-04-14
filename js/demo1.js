@@ -10,12 +10,12 @@ Promise.all([
     newMenu.addItem('M4 Rifle','../models/m4.gltf',null,null)
 ]).then(function() { newMenu.animate() });
 
-$("#moveLeft").on("click",function(){
+document.getElementById("moveLeft").addEventListener("click",function(){
   newMenu.moveLeft();
-  $("#itemName").html(newMenu.getSelectedName());
+  document.getElementById("itemName").textContent = newMenu.getSelectedName();
 });
 
-$("#moveRight").on("click",function(){
+document.getElementById("moveRight").addEventListener("click",function(){
   newMenu.moveRight();
-  $("#itemName").html(newMenu.getSelectedName());
+  document.getElementById("itemName").textContent = newMenu.getSelectedName();
 });
