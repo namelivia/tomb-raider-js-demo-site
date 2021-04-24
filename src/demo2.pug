@@ -1,0 +1,29 @@
+extends layout.pug
+
+block content
+    .container(style="padding:24px;")
+        .col-lg-8.col-lg-offset-2
+            a(href="/#demo")
+                i.fa.fa-arrow-left Back
+            h2 Black and white websites menu
+            p(style="font-size:1em;")
+                | An example of a 3D menu featuring the logos of some interesting projects.
+                | The menu control is binded to the keyboard, also the enter key is binded to
+                | the action of every item on the menu, which is going to the project's website.
+                a(href="https://www.flickr.com/photos/studiokanu/16120222610/")
+                    | Backgroud image by Pasu Au Yeung on Flickr
+            div(role="tabpanel")
+                ul.nav.nav-tabs(role="tablist")
+                    li.active(role="presentation")
+                        a(href="#result" aria-controls="result" role="tab" data-toggle="tab") Result
+                    li(role="presentation")
+                        a(href="#html" aria-controls="html" role="tab" data-toggle="tab") HTML
+                    li(role="presentation")
+                        a(href="#javascript" aria-controls="javascript" role="tab" data-toggle="tab") Javascript
+            .tab-content
+                .tab-pane.active(role="tabpanel" id="result")
+                    div(id="demo1" style="width:700px;height:400px;background:url('/img/somebg2.png');")
+                .tab-pane(role="tabpanel" id="html")
+                    pre
+                        .language-markup
+                            Here there will be the markup
