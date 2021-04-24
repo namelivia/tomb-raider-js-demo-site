@@ -7,7 +7,7 @@ COPY . .
 # build stage for production
 FROM base-builder as production-builder
 RUN npm install
-RUN npx @11ty/eleventy
+RUN npm run build
 
 # production stage
 FROM nginx:stable-alpine as production
