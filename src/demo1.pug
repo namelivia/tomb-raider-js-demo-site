@@ -1,0 +1,34 @@
+extends layout.pug
+
+block content
+    .container(style="padding:24px;")
+        .col-lg-8.col-lg-offset-2
+            a(href="/#demo")
+                i.fa.fa-arrow-left Back
+            h2 Weapons 3D menu
+            p(style="font-size:1em;")
+                | An example of a 3D menu similar to the original Tomb Raider 2 menu, it contains some weapons and a similar background.
+                | The menu control is binded to two html buttons and also the name of the selected element is displayed in a html tag under the menu.
+                a(href="http://opengameart.org/content/fps-weapons") 3D models by Kingofthecrows on
+                Opengameart
+            div(role="tabpanel")
+                ul.nav.nav-tabs(role="tablist")
+                    li.active(role="presentation")
+                        a(href="#result" aria-controls="result" role="tab" data-toggle="tab") Result
+                    li(role="presentation")
+                        a(href="#html" aria-controls="html" role="tab" data-toggle="tab") HTML
+                    li(role="presentation")
+                        a(href="#javascript" aria-controls="javascript" role="tab" data-toggle="tab") Javascript
+            .tab-content
+                .tab-pane.active(role="tabpanel" id="result")
+                    div(id="demo1" style="width:700px;height:400px;background:url('/img/somebg.png');")
+                    .row.text-center(style="margin-top:-360px;")
+                        button.btn.btn-default.btn-lg(type="button" id="moveLeft")
+                            i.fa.fa-arrow-left
+                        p(id="itemName" style="display:inline-block;margin-left:14px;margin-right:14px;min-width:263px;") Click on the arrows to move
+                        button.btn.btn-default.btn-lg(type="button" id="moveRight")
+                            i.fa.fa-arrow-right
+                .tab-pane(role="tabpanel" id="html")
+                    pre
+                        code.language-markup
+                            Here there will be the markup

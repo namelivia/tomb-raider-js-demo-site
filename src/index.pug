@@ -1,0 +1,35 @@
+extends layout.pug
+
+block content
+    include navigation
+    header.intro
+        .intro-body
+            .container
+                .row
+                    .col-md-8.col-md-offset-2
+                        h1.brand-heading tombraider.js
+                        p.intro-text A free javascript library for creating 3D menus for websites.<br>Created by namelivia.
+                        a.btn.btn-circle.page-scroll(href="#features")
+                            i.fa.fa-angle-double-down.animated
+
+    include about.pug
+    include demos.pug
+    include downloads.pug
+    include contact.pug
+
+    footer
+        .container.text-center
+            p namelivia - 2015
+
+    script(src="/js/jquery.js")
+    script(src="/js/bootstrap.min.js")
+    script(src="/js/jquery.easing.min.js")
+    script(src="/js/prism.js")
+    script(src="/js/three.min.js")
+    script(src="/js/Detector.js")
+    script(src="/js/tombraider.js-v0.0.1.min.js")
+    script(src="js/grayscale.js")
+
+    <!-- demos.js -->
+    <script src="js/demos.js"></script>
+
