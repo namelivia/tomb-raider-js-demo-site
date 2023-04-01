@@ -24,7 +24,7 @@
     "jquery": "^3.6.4",
     "mini-css-extract-plugin": "^2.7.5",
     "popper.js": "^1.16.1",
-    "webpack": "^5.76.3",
+    "webpack": "^5.77.0",
     "webpack-cli": "^5.0.1"
   }
 }
