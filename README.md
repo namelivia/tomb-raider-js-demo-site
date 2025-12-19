@@ -1,3 +1,3 @@
-# Tombraider.js demo site
+# [Moved]
 
-Just a fast and small website I made to showcase tombraider.js on my personal website.
+Development has moved to Codeberg: [https://codeberg.org/namelivia/tomb-raider-js-demo-site](https://codeberg.org/namelivia/tomb-raider-js-demo-site)
